@@ -1,14 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TactileNet</title>
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/static/favicon.ico"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="/static/output.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-  <body>
-    <div class="bg-blue-400">
-      <h1>hello world</h1>
-    </div>
+  <body class="bg-slate-700">
+    <nav
+      class="bg-slate-800 shadow-lg shadow-gray-200 p-2 flex justify-between items-center z-20"
+    >
+      <ul class="flex items-center">
+        <li class="mx-2">
+          <a href="#abstract" class="text-gray-200 hover:text-white transition"
+            >Abstract</a
+          >
+        </li>
+        <li class="mx-2">
+          <a
+            href="#related-work"
+            class="text-gray-200 hover:text-white transition"
+            >Related Work</a
+          >
+        </li>
+        <li class="mx-2">
+          <a href="#method" class="text-gray-200 hover:text-white transition"
+            >Method</a
+          >
+        </li>
+        <li class="mx-2">
+          <a href="#dataset" class="text-gray-200 hover:text-white transition"
+            >Dataset</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <section class="bg-slate-800 p-10 font-roboto">
+      <div class="container mx-auto">
+        <h1 class="text-white text-4xl font-bold mb-12 text-center">
+          TactileNet: Bridging the Accessibility Gap with AI-Generated Tactile
+          Graphics for Individuals with Vision Impairment
+        </h1>
+      </div>
+      <!-- <h2 class="text-gray-300 text-2xl font-bold mb-4">
+        
+      </h2> -->
+
+      <ul class="flex items-center font-oswald justify-center">
+        <li class="mx-2">
+          <a href="" class="transition-all text-gray-200 hover:text-white"
+            >Adnan Khan<sup>1</sup></a
+          >
+        </li>
+        <li class="mx-2">
+          <a href="" class="transition-all text-gray-200 hover:text-white"
+            >Alireza Choubineh<sup>1</sup></a
+          >
+        </li>
+        <li class="mx-2">
+          <a href="" class="transition-all text-gray-200 hover:text-white"
+            >Mai A. Shaaban<sup>2</sup></a
+          >
+        </li>
+        <li class="mx-2">
+          <a href="" class="transition-all text-gray-200 hover:text-white"
+            >Abbas Akkasi<sup>1</sup></a
+          >
+        </li>
+        <li class="mx-2">
+          <a href="" class="transition-all text-gray-200 hover:text-white"
+            >Majid Komeili<sup>1</sup></a
+          >
+        </li>
+      </ul>
+      <ul class="text-gray-200 flex flex-col items-center mt-2">
+        <li>
+          <sup>1</sup>School of Computer Science, Carleton University, Ottawa,
+          Canada
+        </li>
+        <li>
+          <sup>2</sup>Mohamed bin Zayed University of Artificial Intelligence
+          Abu Dhabi, UAE
+        </li>
+      </ul>
+      <ul class="text-gray-200 flex flex-col items-center">
+        <li>
+          {adnankhan5, alirezachoubineh}@cmail.carleton.ca,
+          mai.kassem@mbzuai.ac.ae
+        </li>
+        <li>abbas.akkasi@carleton.ca, majidkomeili@cunet.carleton.ca</li>
+      </ul>
+    </section>
+    <section class="bg-slate-700 p-10" id="abstract" data-aos="fade-up">
+      <div class="container mx-auto relative">
+        <div class="bg-slate-800 p-8 z-10 shadow-lg shadow-gray-600 rounded-lg">
+          <h3 class="text-gray-200 font-bold text-xl mb-4 text-center p-4">
+            Abstract
+          </h3>
+          <p class="text-gray-200 font-inter text-justify">
+            Tactile graphics are essential for providing access to visual
+            information for the 43 million people globally living with vision
+            loss. Traditional methods for creating these graphics are
+            labor-intensive and cannot meet growing demand. We introduce
+            TactileNet, the first comprehensive dataset and AI-driven framework
+            for generating embossing-ready 2D tactile templates using
+            text-to-image Stable Diffusion (SD) models. By integrating Low-Rank
+            Adaptation (LoRA) and Dream-Booth, our method fine-tunes SD models
+            to produce high-fidelity, guideline-compliant graphics while
+            reducing computational costs. Quantitative evaluations with tactile
+            experts show 92.86% adherence to accessibility standards and
+            near-human design fidelity (SSIM = 0.538 vs. expert benchmarks).
+            Notably, our model preserves object silhouettes better than human
+            designs (SSIM = 0.259 vs. 0.215 for binary masks), addressing a key
+            limitation of manual tactile abstraction. The framework scales to
+            32,000 images (7,050 high-quality) across 66 classes, with prompt
+            editing enabling customizable outputs (e.g., adding or removing
+            details). By automating the 2D template generation step—compatible
+            with standard embossing workflows—TactileNet accelerates production
+            while preserving design flexibility. This work demonstrates how AI
+            can augment (not replace) human expertise to bridge the
+            accessibility gap in education and beyond. Code, data, and models
+            will be publicly released to foster further research.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-700 p-10" id="related-work" data-aos="fade-up">
+      <div class="container mx-auto relative">
+        <div class="bg-slate-800 p-8 z-10 shadow-lg shadow-gray-600 rounded-lg">
+          <h3 class="text-gray-200 font-bold text-xl mb-4 text-center p-4">
+            Related Work
+          </h3>
+          <p class="text-gray-200 font-inter text-justify">TODO</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-700 p-10" id="method" data-aos="fade-up">
+      <div class="container mx-auto relative">
+        <div class="bg-slate-800 p-8 z-10 shadow-lg shadow-gray-600 rounded-lg">
+          <h3 class="text-gray-200 font-bold text-xl mb-4 text-center p-4">
+            Method
+          </h3>
+          <p class="text-gray-200 font-inter text-justify">
+            TODO
+
+            <img src="/static/methodology_screenshot.png" alt="" />
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-700 p-10" id="dataset" data-aos="fade-up">
+      <div class="container mx-auto relative">
+        <div class="bg-slate-800 p-8 z-10 shadow-lg shadow-gray-600 rounded-lg">
+          <h3 class="text-gray-200 font-bold text-xl mb-4 text-center p-4">
+            Dataset
+          </h3>
+          <p class="text-gray-200 font-inter text-justify">TODO</p>
+          <table class="table-auto w-full">
+            <thead class="text-white font-bold border-2 border-white">
+              <tr class="">
+                <th class="p-2">Class</th>
+                <th>(Source, Generated) Counts</th>
+                <th>Class</th>
+                <th>(Source, Generated) Counts</th>
+                <th>Class</th>
+                <th class="p-2">(Source, Generated) Counts</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-200">
+              <tr class="text-center border">
+                <td>Airplane</td>
+                <td>(10, 55)</td>
+                <td>Apple</td>
+                <td>(11, 28)</td>
+                <td>Ball</td>
+                <td>(25, 83)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Banana</td>
+                <td>(13, 156)</td>
+                <td>Bat</td>
+                <td>(13, 60)</td>
+                <td>Bed</td>
+                <td>(14, 95)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Bee</td>
+                <td>(13, 61)</td>
+                <td>Beluga Whale</td>
+                <td>(11, 27)</td>
+                <td>Bicycle</td>
+                <td>(11, 117)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Bird</td>
+                <td>(16, 115)</td>
+                <td>Boat</td>
+                <td>(18, 19)</td>
+                <td>Book</td>
+                <td>(12, 73)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Bottle</td>
+                <td>(11, 137)</td>
+                <td>Camel</td>
+                <td>(10, 109)</td>
+                <td>Camera</td>
+                <td>(12, 219)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Car</td>
+                <td>(25, 106)</td>
+                <td>Cat</td>
+                <td>(22, 142)</td>
+                <td>Chair</td>
+                <td>(12, 117)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Clover</td>
+                <td>(10, 23)</td>
+                <td>Crab</td>
+                <td>(10, 321)</td>
+                <td>Cup</td>
+                <td>(15, 380)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Dinosaur</td>
+                <td>(20, 184)</td>
+                <td>Dog</td>
+                <td>(21, 119)</td>
+                <td>Door</td>
+                <td>(13, 299)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Duck</td>
+                <td>(12, 399)</td>
+                <td>Egg</td>
+                <td>(17, 87)</td>
+                <td>Elephant</td>
+                <td>(20, 29)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Fish</td>
+                <td>(30, 130)</td>
+                <td>Flower</td>
+                <td>(13, 72)</td>
+                <td>Fox</td>
+                <td>(13, 163)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Giraffe</td>
+                <td>(12, 12)</td>
+                <td>Glasses</td>
+                <td>(12, 44)</td>
+                <td>Guitar</td>
+                <td>(18, 70)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Hammer</td>
+                <td>(19, 133)</td>
+                <td>Hat</td>
+                <td>(12, 73)</td>
+                <td>Headphones</td>
+                <td>(11, 53)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Helicopter</td>
+                <td>(102, 35)</td>
+                <td>Horse</td>
+                <td>(23, 93)</td>
+                <td>Hut</td>
+                <td>(10, 226)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Iron</td>
+                <td>(10, 110)</td>
+                <td>Jellyfish</td>
+                <td>(9, 21)</td>
+                <td>Lamp</td>
+                <td>(10, 38)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Laptop</td>
+                <td>(11, 153)</td>
+                <td>Leaf</td>
+                <td>(11, 127)</td>
+                <td>Llama</td>
+                <td>(10, 137)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Motorcycle</td>
+                <td>(14, 161)</td>
+                <td>Pencil</td>
+                <td>(19, 85)</td>
+                <td>Penguin</td>
+                <td>(12, 149)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Planet</td>
+                <td>(12, 36)</td>
+                <td>Rabbit</td>
+                <td>(10, 205)</td>
+                <td>Ring</td>
+                <td>(10, 17)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Rocket</td>
+                <td>(23, 84)</td>
+                <td>Satellite</td>
+                <td>(10, 49)</td>
+                <td>School Backpack</td>
+                <td>(12, 24)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Scooty</td>
+                <td>(12, 46)</td>
+                <td>Ship</td>
+                <td>(13, 13)</td>
+                <td>Shirt</td>
+                <td>(21, 152)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Shoe</td>
+                <td>(18, 207)</td>
+                <td>Snowflake</td>
+                <td>(11, 56)</td>
+                <td>Soda Cans</td>
+                <td>(12, 35)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Spoon</td>
+                <td>(10, 25)</td>
+                <td>Teddy Bear</td>
+                <td>(16, 39)</td>
+                <td>Train</td>
+                <td>(18, 202)</td>
+              </tr>
+              <tr class="text-center border">
+                <td>Tree</td>
+                <td>(22, 107)</td>
+                <td>Watch</td>
+                <td>(11, 83)</td>
+                <td>Umbrella</td>
+                <td>(10, 25)</td>
+              </tr>
+              <tr class="text-center border">
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="copyright" class="bg-slate-800 p-10">
+      <div class="flex flex-col items-center">
+        <p class="text-center text-white">
+          © 2025 TactileNet. All rights reserved.
+        </p>
+        <a href="https://iml.carleton.ca/" class="mt-2">
+          <div class="bg-white p-4 rounded shadow-lg w-20">
+            <img src="/static/iml-logo.png" alt="iml-logo" class="w-20" />
+          </div>
+        </a>
+      </div>
+      <div class="text-white flex items-center justify-center mt-4">
+        <a
+          href="https://www.linkedin.com/company/intelligent-machines-lab-iml/"
+          target="_blank"
+          class="mx-2"
+        >
+          <i data-lucide="linkedin"></i>
+        </a>
+      </div>
+    </section>
+
+    <script>
+      lucide.createIcons();
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
